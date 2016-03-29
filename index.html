@@ -21,7 +21,7 @@
                             </a>
                             <ol class="dropdown-menu">
                                 <li v-for="step in steps">
-                                    <a href="#" v-on:click.prevent="gotoStep($index)">{{ step.title }}</a>
+                                    <a href="#" v-on:click.prevent="gotoStep($index)">{{ step.task }}</a>
                                 </li>
                             </ol>
                         </li>
@@ -38,15 +38,24 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3>{{ step.title }}</h3>
+                            <h3>{{ title }}</h3>
                         </div>
                         <div class="panel-body">
+
+                            <p>{{ intro }}</p>
+
+                            <h4>Step {{ $index + 1 }}:  {{ step.task }}</h4>
 
                             <ul>
                                 <li v-for="substep of step.substeps">
                                     {{ substep.instruction }}
                                 </li>
                             </ul>
+
+                            {{{ interaction }}}
+
+                            <button class="btn btn-info" v-on:click="prev" v-if="$index > 0">Go back</button>
+                            <button class="btn btn-success" v-on:click="next" v-show="step.accomplished">Success! Go to the next step.</button>
 
                         </div>
 
@@ -69,6 +78,22 @@
                     </div>
                 </div>
             </div>
+
+        </div><!-- .container -->
+
+        <div id="narrative-content" hidden="hidden">
+            <article id="step-0">
+                <h1>Welcome to your first Defense Against the Dark Arts class!</h1>
+                <p>You are about to begin practicing some serious technomagic.</p>
+                <div class="interaction">
+                    <button onclick="Tutorial.accomplishStep(Tutorial.curStep);">Press me.</button>
+                </div>
+            </article>
+
+            <article id="step-1">
+                <h1>Choose your wand!</h1>
+                <p>Different computers use different tools. It's like your wand. Let's pick a wand for you.</p>
+            </article>
         </div>
 
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
