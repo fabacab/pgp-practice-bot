@@ -1,0 +1,17 @@
+{
+  "name": "pgp-practice-bot",
+  "version": "0.0.1",
+  "description": "Interactive tutorial for learning PGP/GPG, implemented as a single-page application.",
+  "main": "app.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "vue": "^1.0.20",
+    "vue-resource": "^0.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maymay",
+  "license": "AGPL-3.0"
+}
