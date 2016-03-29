@@ -3,8 +3,16 @@
   "version": "0.0.1",
   "description": "Interactive tutorial for learning PGP/GPG, implemented as a single-page application.",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/npm/npm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/owner/project/issues"
+  },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "jquery": "^2.2.2",
     "vue": "^1.0.20",
     "vue-resource": "^0.7.0"
   },

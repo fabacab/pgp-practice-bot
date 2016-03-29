@@ -1,7 +1,8 @@
-new Vue({
+var Tutorial = new Vue({
     'el': '#tutorial',
     'data': {
-        'steps': ''
+        'steps': '',
+        'curStep': 0
     },
     'ready': function () {
         this.initSteps();
@@ -36,6 +37,15 @@ new Vue({
                 }
             ];
             this.$set('steps', steps);
+        },
+        'next': function () {
+            this.curStep++;
+        },
+        'prev': function () {
+            this.curStep--;
+        },
+        'gotoStep': function (index) {
+            this.curStep = index;
         }
     }
 });

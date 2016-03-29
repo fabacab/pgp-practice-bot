@@ -1,0 +1,9 @@
+header .dropdown-menu {
+    counter-reset: step;
+}
+header .dropdown-menu a::before {
+    counter-increment: step;
+    content: "Step " counter(step) ": ";
+    display: inline-block;
+    margin-right: 1em;
+}
